@@ -18,8 +18,6 @@ const config = {
 const firebase = initializeApp(config);
 const defaultFirestore = getFirestore();
 
-// seedDatabase(firebase);
-
 const data = seedDatabase();
 
 const PushDataToFireStore = async () => {
