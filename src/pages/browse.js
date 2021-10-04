@@ -1,5 +1,8 @@
+import BrowseContainer from "containers/browse";
 import React from "react";
 
-export default function Browse() {
-    return <div></div>;
+function Browse() {
+    return <BrowseContainer />;
 }
+
+export default Browse;
