@@ -1,18 +1,17 @@
-import React from "react";
-// import { Home, Browse, SignIn, SignUp } from "./pages";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
-import * as ROUTES from "./constants/routes";
+import { IsUserRedirect, ProtectedRoute } from "helpers/routes";
+import { useAuthListener } from "hooks";
 import { PushDataToFireStore } from "lib/firebase.prod";
 import { Browse, Home } from "pages";
 import SignIn from "pages/signin";
 import SignUp from "pages/signup";
-import { IsUserRedirect, ProtectedRoute } from "helpers/routes";
-import { useAuthListener } from "hooks";
+import React from "react";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import * as ROUTES from "./constants/routes";
 
 export default function App() {
     PushDataToFireStore();
-    const user = useAuthListener();
-    console.log(user);
+    const { user } = useAuthListener();
+    // console.log(user);
 
     return (
         <Router>
@@ -43,5 +42,19 @@ export default function App() {
                 </IsUserRedirect>
             </Switch>
         </Router>
+        // <Router>
+        //     <Route exact path="/browse">
+        //         <Browse />
+        //     </Route>
+        //     <Route exact path="/signin">
+        //         <Signin />
+        //     </Route>
+        //     <Route exact path="/signup">
+        //         <SignUp />
+        //     </Route>
+        //     <Route exact path={ROUTES.HOME}>
+        //         <Home />
+        //     </Route>
+        // </Router>
     );
 }
