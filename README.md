@@ -4,6 +4,20 @@ I have built the following pages within this application: Sign in, Sign up, Brow
 There are four different pages, some using protected routes with auth listeners. 
 Firebase firestore handles all the data and that data is retrieved using a custom hook; authentication is used on all pages, which is handled by Firebase as well.
 
+#### **🏨 Folder structure**
+```
+src
+|__components
+|__constants
+|__containers
+|__fixtures
+|__helpers
+|__hooks
+|__lib
+|__pages
+|__utils
+```
+
 ## How to use
 
 -   Download or clone this repository.
@@ -31,17 +45,14 @@ You will also see any lint errors in the console.
 
 
 # Image
+-   Browse
+<img src="https://raw.githubusercontent.com/DucTran2310/Netflix-clone/main/Project.png" alt="" >
+<img src="https://raw.githubusercontent.com/DucTran2310/Netflix-clone/main/project2.png" alt="" >
 
-#### **🏨 Folder structure**
-```
-src
-|__components
-|__constants
-|__containers
-|__fixtures
-|__helpers
-|__hooks
-|__lib
-|__pages
-|__utils
-```
+<img src="https://raw.githubusercontent.com/DucTran2310/Netflix-clone/main/project3.png" alt="" >
+
+<img src="https://raw.githubusercontent.com/DucTran2310/Netflix-clone/main/homepage.png" alt="" >
+
+<img src="https://raw.githubusercontent.com/DucTran2310/Netflix-clone/main/loading.png" alt="" >
+
+
