@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { doc, setDoc, getFirestore } from "firebase/firestore";
-import { seedDatabase } from "../seed";
+import { dataMovieSeries, dataMovieFilms } from "../seed";
 import "firebase/compat/auth";
 // import { seedDatabase } from "../seed";
 
@@ -18,13 +18,15 @@ const config = {
 const firebase = initializeApp(config);
 const defaultFirestore = getFirestore();
 
-const data = seedDatabase();
-
 const PushDataToFireStore = async () => {
     try {
-        const cityRef = doc(defaultFirestore, "test", "test");
-        await setDoc(cityRef, {
-            data,
+        const cityRef1 = doc(defaultFirestore, "Store", "series");
+        const cityRef2 = doc(defaultFirestore, "Store", "films");
+        await setDoc(cityRef1, {
+            dataMovieSeries,
+        });
+        await setDoc(cityRef2, {
+            dataMovieFilms,
         });
     } catch (error) {
         console.log(error);
