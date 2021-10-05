@@ -4,7 +4,8 @@ I have built the following pages within this application: Sign in, Sign up, Brow
 There are four different pages, some using protected routes with auth listeners.
 Firebase firestore handles all the data and that data is retrieved using a custom hook; authentication is used on all pages, which is handled by Firebase as well.
 
-### DEMO[https://netflix-clone-a3926.web.app]
+###DEMO 
+-   https://netflix-clone-a3926.web.app
 
 #### **🏨 Folder structure**
 
