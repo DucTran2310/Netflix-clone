@@ -11,7 +11,7 @@ password: 23102000
 
 ###DEMO
 
--   https://netflix-clone-a3926.web.app
+-   https://netflix-clone-85d67.web.app
 
 #### **🏨 Folder structure**
 
@@ -57,11 +57,12 @@ You will also see any lint errors in the console.
 # Image
 
 -   Browse
-    <img src="https://raw.githubusercontent.com/DucTran2310/Netflix-clone/main/Project.png" alt="" >
-    <img src="https://raw.githubusercontent.com/DucTran2310/Netflix-clone/main/project2.png" alt="" >
+    <img src="./public/images/layout/homepage.png" alt="" >
+    <img src="./public/images/layout/homepage2.png" alt="" >
 
-<img src="https://raw.githubusercontent.com/DucTran2310/Netflix-clone/main/project3.png" alt="" >
+<img src="./public/images/layout/Project.png" alt="" >
+<img src="./public/images/layout/project2.png" alt="" >
+<img src="./public/images/layout/project3.png" alt="" >
+<img src="./public/images/layout/project4.png" alt="" >
 
-<img src="https://raw.githubusercontent.com/DucTran2310/Netflix-clone/main/homepage.png" alt="" >
-
-<img src="https://raw.githubusercontent.com/DucTran2310/Netflix-clone/main/loading.png" alt="" >
+<img src="./public/images/layout/loading.png" alt="" >
