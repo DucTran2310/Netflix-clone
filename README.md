@@ -11,7 +11,7 @@ password: 23102000
 
 ###DEMO
 
--   https://netflix-clone-85d67.web.app
+-   https://netflix-clone-85d67.firebaseapp.com/
 
 #### **🏨 Folder structure**
 

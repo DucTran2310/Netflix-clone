@@ -12,27 +12,27 @@ import { FooterContainer } from "./footer";
 export default function BrowseContainer() {
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState();
   const [slideRows, setSlideRows] = useState([]);
   const [category, setCategory] = useState();
+  const [searchText, setSearchText] = useState("");
 
   const auth = getAuth(firebase);
 
   const user = auth.currentUser || {};
 
   // console.log("profile", profile);
-  const getMovies = useCallback((categoryFilter = "MovieSeries") => {
+  const getMovies = useCallback((categoryFilter = "MovieFilms") => {
     selectionFilter({ setSlideRows, categoryFilter })
     setCategory(categoryFilter);
-  })
+  }, [])
 
   useEffect(() => {
     let _c_ = false
     if (!_c_) {
-      getMovies();
+      getMovies(category);
     }
     return () => _c_ = true
-  }, [getMovies])
+  }, [category, getMovies])
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,33 +41,31 @@ export default function BrowseContainer() {
     return false;
   }, []);
 
-  useEffect(() => {
-    if (slideRows && searchTerm) {
-      // console.log(slideRows);
+
+
+  function handleSearch(searchTerm) {
+    setSearchText(searchTerm)
+    if (slideRows) {
       const fuse = new Fuse(slideRows, {
-        keys: ["data.description", "data.title", "data.genre"],
+        keys: ["data.title"],
       });
       let results = fuse.search(searchTerm).map(item => {
         return item.item;
       });
-
-      console.log(results);
+      // console.log(results);
       if (
         slideRows.length > 0 &&
         searchTerm.length > 0 &&
         results.length > 0
       ) {
+        // console.log("render! Data: ", results);
         setSlideRows(results);
       } else {
-        setSlideRows(category);
+        getMovies()
       }
     }
-    return false;
-  }, [searchTerm, slideRows, category]);
-
-  function handleSearch(currentTarget) {
-    setSearchTerm(currentTarget);
   }
+  console.log(slideRows)
 
   // console.log(results);
   // console.log(slideRows);
@@ -111,7 +109,7 @@ export default function BrowseContainer() {
           <Header.Group>
             {/* Search */}
             <Header.Search
-              searchTerm={searchTerm}
+              searchTerm={searchText}
               // setSearchTerm={setSearchTerm}
               handleSearch={handleSearch}
             />
@@ -155,7 +153,7 @@ export default function BrowseContainer() {
       </Header>
 
       <Card.Group>
-        {slideRows.length > 0
+        {slideRows && slideRows.length > 0
           && slideRows.map(slideItem => (
             <Card
               key={`${category}-${slideItem.title.toLowerCase()}`}
